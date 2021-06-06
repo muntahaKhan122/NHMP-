@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>  
+   <link rel="stylesheet"  href="bootstrap.css"/>  
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">       
+        </script>
+</head>  
+<style>
+.back {
+        background-image: url('loginback.png');
+}
+.rounded-circle{
+    height:40px;
+    width: 40px;
+}
+
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background:#343234;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #343234;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #343234;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color:#343234;
+    background: #fff;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar ul li > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #343234;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:#343234;
+}
+#compDetails {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background:#343234;
+  color: #fff;
+  margin-top: 20px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+.rounded-circle{
+    height:40px;
+    width: 40px;
+    margin-right: 30px;
+}
+.table a {
+    color: black;
+}
+.content{
+    margin-left: 20px;
+    margin-right:20px;
+    width: 1700px;
+}
+.button {
+  border: none;
+  color: Black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+</style>
+
+<body class="back">
+
+        <!-- Top Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NHMP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            </li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="dummyimg.jpg" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">View Profile</a>
+                  <a class="dropdown-item" href="#">View Attendance</a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="Login">Logout</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+       </nav>      
+        <!-- Top Nav Bar Finished -->
+
+
+
+
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+     <nav id="sidebar">
+            
+    
+            <ul class="list-unstyled components">
+                 <li>
+                    <a href="emp_home.html">Home</a>
+                </li>
+
+
+
+            
+                <li>
+                    <a href="Penalties.html">Check Penalties</a>
+                </li>
+				
+				 <li>
+                    <a href="emp_applyLeave.html">Apply Leave</a>
+                </li>
+                <li>
+                    <a href="emp_checkInOut.html">Check In/Out</a>
+                </li>
+				
+				<li>
+                    <a href="trainee_complain.html">Complain</a>
+                </li>
+
+
+            </ul>
+
+
+
+
+
+        </nav>
+            <!-- Sidebar Finished-->
+
+
+                    <!-- Content of page -->
+<div class="content">
+    <div class="pageTitle"><h3 style="text-align: center;">Penalties</h3></div>
+
+<table style="width:100%"  class="table table-striped">
+  <tr>
+    <th scope="col">Penalty</th>
+    <th scope="col">Date</th>
+    <th scope="col">Details</th>
+
+  </tr>
+
+
+   <tr>
+	<td>Written Apology</td>
+    <td>2-2-2020</td>
+	<td>
+	<button onclick="myFunction()" data-toggle="modal" data-target="#myModal">Show/hide Details</button>
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Complain</h4>
+        </div>
+        <div class="modal-body">
+          <p>Improper Dresscode on 1-2-2020.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </td>
+  
+  </tr>
+  <tr>
+	<td>Written Apology and Fine</td>
+    <td>3-2-2020</td>
+	<td>
+	<button onclick="myFunction()" data-toggle="modal" data-target="#myModal1">Show/hide Details</button>
+	<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Complain</h4>
+        </div>
+        <div class="modal-body">
+          <p>Improper Dresscode  on 2-2-2020.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </td>
+  
+  </tr>
+  <tr>
+	<td>Fine</td>
+    <td>4-2-2020</td>
+	<td>
+	<button onclick="myFunction()" data-toggle="modal" data-target="#myModal2">Show/hide Details</button>
+	<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Complain</h4>
+        </div>
+        <div class="modal-body">
+          <p>Improper Dresscode on 3-2-2020.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </td>
+
+  </tr>
+  
+</table>
+
+
+
+</div>
+
+        <!-- Content Finished -->
+
+      <script type="text/javascript">
+        
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+
+</body>

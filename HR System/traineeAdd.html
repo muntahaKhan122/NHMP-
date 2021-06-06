@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>  
+   <link rel="stylesheet"  href="bootstrap.css"/>  
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">       
+        </script>
+</head>  
+<style>
+
+.rounded-circle{
+    height:40px;
+    width: 40px;
+}
+
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background:#343234;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #343234;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #343234;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color:#343234;
+    background: #fff;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar ul li > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #343234;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:#343234;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+.rounded-circle{
+    height:40px;
+    width: 40px;
+    margin-right: 30px;
+}
+.table a {
+    color: black;
+}
+.content{
+    margin-left: 20px;
+    margin-right:20px;
+    width: 1700px;
+}
+.back {
+        background-image: url('loginback.png');
+}
+</style>
+
+<body class="back">
+
+        <!-- Top Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NHMP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            </li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="dummyimg.jpg" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="empProfile.html">View Profile</a>
+                  <a class="dropdown-item" href="empAtt.html">View Attendance</a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="Login.html">Logout</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+       </nav>      
+        <!-- Top Nav Bar Finished -->
+
+
+
+
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            
+    
+            <ul class="list-unstyled components">
+  
+                <li>
+                    <a href="homeHR.html">Home</a>
+                </li>
+
+
+                <li>
+                    <a href="#emp" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
+                    <ul class="collapse list-unstyled" id="emp">
+                        <li>
+                            <a href="empAdd.html">Add Employee</a>
+                        </li>
+                        <li>
+                            <a href="crudEmployee.html">View/Edit/Delete</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Trainees</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="traineeAdd.html">Add Trainee</a>
+                        </li>
+                        <li>
+                            <a href="crudTrainee.html">View/Edit/Delete</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                  <a href="leaveHR.html">Apply for Leave</a>
+              </li>
+
+                <li>
+                    <a href="hrComplain.html">Complain</a>
+                </li>
+
+            </ul>
+
+
+
+
+
+        </nav>
+            <!-- Sidebar Finished-->
+
+
+                    <!-- Content of page -->
+<div class="content">
+    <div class="pageTitle"><h3 style="text-align: center;">Add Trainee</h3></div>
+    <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Father's Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="pwd" >
+          </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label col" for="pwd">Educational Qualifications</label>
+            <div class="form-group" >
+                <label class="control-label col" for="pwd">Institution Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="pwd"  >
+                </div>
+              </div>
+
+              <div class="form-group" >
+                <label class="control-label col" for="pwd">Degree</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="pwd"  >
+                </div>
+              </div>
+
+              <div class="form-group" >
+                <label class="control-label col" for="pwd">Time Period</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="pwd"> TO <input type="date" class="form-control" id="pwd"  > 
+                </div>
+              </div>
+
+          </div>
+
+          <a href="add">+Click to add educational information</a>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Roll No</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">CNIC</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+   
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">District of Domicile</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="pwd">
+            </div>
+          </div>
+   
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Date of Birth</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Telephone Number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col" for="pwd">Date of entry in Government Services</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Telephone Number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Blood Group</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col" for="pwd">Driving Liscene Numebr</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+       
+          <div class="form-group">
+            <label class="control-label" for="pwd">Permanent Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label" for="pwd">Residential Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col" for="pwd">Date of Releiving for Course</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Length of Service</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Status</label>
+            <div class="col-sm-10">
+
+                <input type="text" list="status"/>
+                <datalist id="status">
+                  <option>Married</option>
+                  <option>Unmarried</option>
+    
+                </datalist>
+            </div>
+               
+        </div>
+
+          <div class="form-group">
+            <label class="control-label col" for="pwd">Rank at time of Recruitment</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="control-label" for="pwd">Date of arrival in Training College</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd" >
+            </div>
+          </div>
+
+          
+          <div class="form-group">
+            <label class="control-label" for="pwd">Present Posting Zone</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="pwd">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <a class="btn btn-success" href="crudTrainee.html" role="button">Add</a>
+          </div>
+
+      </form>
+</div>
+
+        <!-- Content Finished -->
+
+      <script type="text/javascript">
+        
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+
+</body>
